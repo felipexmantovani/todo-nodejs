@@ -1,27 +1,56 @@
+import bcrypt from 'bcrypt';
+
 export default (sequelize, DataType) => {
-    const Usuarios = sequelize.define('Usuarios', {
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: DataType.INTEGER
+    const Usuarios = sequelize.define(
+        'Usuarios',
+        {
+            id: {
+                autoIncrement: true,
+                primaryKey: true,
+                type: DataType.INTEGER
+            },
+            nome: {
+                type: DataType.STRING,
+                validate: {
+                    notEmpty: true
+                }
+            },
+            email: {
+                allowNull: false,
+                type: DataType.STRING,
+                unique: true,
+                validate: {
+                    notEmpty: true
+                }
+            },
+            cpf: {
+                allowNull: false,
+                type: DataType.STRING,
+                validate: {
+                    notEmpty: true
+                }
+            },
+            senha: {
+                allowNull: false,
+                type: DataType.STRING,
+                validate: {
+                    notEmpty: true
+                }
+            }
         },
-        nome: {
-            type: DataType.STRING
-        },
-        email: {
-            allowNull: false,
-            type: DataType.STRING,
-            unique: true
-        },
-        cpf: {
-            allowNull: false,
-            type: DataType.STRING
-        },
-        senha: {
-            allowNull: false,
-            type: DataType.STRING
+        {
+            hooks: {
+                beforeCreate: usuario => {
+                    const salt = bcrypt.genSaltSync();
+                    usuario.set('senha', bcrypt.hashSync(usuario.senha, salt));
+                }
+            },
+            classMethods: {
+                isPassword: (encodedPassword, senha) =>
+                    bcrypt.compareSync(senha, encodedPassword)
+            }
         }
-    })
+    );
 
     return Usuarios;
-}
+};

@@ -27,7 +27,6 @@ describe('Rota Usuários', () => {
                 expect(res.body[0].nome).to.be.eql(defaultUsuario.nome);
                 expect(res.body[0].email).to.be.eql(defaultUsuario.email);
                 expect(res.body[0].cpf).to.be.eql(defaultUsuario.cpf);
-                expect(res.body[0].senha).to.be.eql(defaultUsuario.senha);
 
                 done(err);
             });
@@ -52,7 +51,6 @@ describe('Rota Usuários', () => {
                     expect(res.body.nome).to.be.eql(novoUsuario.nome);
                     expect(res.body.email).to.be.eql(novoUsuario.email);
                     expect(res.body.cpf).to.be.eql(novoUsuario.cpf);
-                    expect(res.body.senha).to.be.eql(novoUsuario.senha);
 
                     done(err);
                 });
@@ -99,7 +97,6 @@ describe('Rota Usuários', () => {
                 expect(res.body.nome).to.be.eql(defaultUsuario.nome);
                 expect(res.body.email).to.be.eql(defaultUsuario.email);
                 expect(res.body.cpf).to.be.eql(defaultUsuario.cpf);
-                expect(res.body.senha).to.be.eql(defaultUsuario.senha);
 
                 done(err);
             });
