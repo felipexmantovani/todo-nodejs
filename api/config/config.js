@@ -8,5 +8,9 @@ export default {
         define: {
             underscored: true
         }
+    },
+    jwtSecret: 'JwT$3Cr3t',
+    jwtSession: {
+        session: false
     }
-}
+};

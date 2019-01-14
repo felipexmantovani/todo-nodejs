@@ -44,13 +44,12 @@ export default (sequelize, DataType) => {
                     const salt = bcrypt.genSaltSync();
                     usuario.set('senha', bcrypt.hashSync(usuario.senha, salt));
                 }
-            },
-            classMethods: {
-                isPassword: (encodedPassword, senha) =>
-                    bcrypt.compareSync(senha, encodedPassword)
             }
         }
     );
+
+    Usuarios.isPassword = (senha, encodedPassword) =>
+        bcrypt.compareSync(senha, encodedPassword);
 
     return Usuarios;
 };

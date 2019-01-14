@@ -1,5 +1,3 @@
-// npm run test-integration
-
 describe('Rota Usuários', () => {
     const Usuarios = app.datasource.models.Usuarios;
     const defaultUsuario = {
