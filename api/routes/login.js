@@ -1,12 +1,11 @@
 import HttpStatus from 'http-status';
 import jwt from 'jwt-simple';
-import bcrypt from 'bcrypt';
 
 export default app => {
     const config = app.config;
     const Usuarios = app.datasource.models.Usuarios;
 
-    app.post('/api/usuarios/login', (req, res) => {
+    app.post('/api/login', (req, res) => {
         if (req.body.email && req.body.senha) {
             const email = req.body.email;
             const senha = req.body.senha;

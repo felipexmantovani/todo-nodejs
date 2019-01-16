@@ -4,7 +4,7 @@ export default {
     password: '',
     params: {
         dialect: 'sqlite',
-        storage: 'todo.sqlite',
+        storage: 'api/todo.sqlite',
         define: {
             underscored: true
         }
