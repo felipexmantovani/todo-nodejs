@@ -1,5 +1,4 @@
 import UsuariosController from '../../../controllers/usuarios';
-import {request} from 'https';
 
 describe('Controllers Usuários', () => {
     describe('GET todos os Usuários getAll()', () => {
