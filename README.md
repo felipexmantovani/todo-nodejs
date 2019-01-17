@@ -1,6 +1,15 @@
 # todo-nodejs
 Trabalho de NodeJs Pós Alfa Umuarama.
 
+Abrir arquivo "api-todo-nodejs.json" no postman.
+
+Passos:
+```
+cd node-js-todo
+npm install
+npm start
+```
+
 Método  |    URL                                                |   Descrição
 --------|-------------------------------------------------------|-----------------------------
 POST    |   http://localhost:3001/api/usuarios                  |   Cadastrar usuário
