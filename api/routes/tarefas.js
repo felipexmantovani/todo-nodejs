@@ -1,95 +1,122 @@
-import UsuariosController from '../controllers/usuarios';
+import TarefasController from '../controllers/tarefas';
 
 export default app => {
-    const usuariosController = new UsuariosController(
-        app.datasource.models.Usuarios
+    const tarefasController = new TarefasController(
+        app.datasource.models.Tarefas
     );
 
-    app.route('/api/usuarios')
+    app.route('/api/tarefas')
+        .all(app.auth.authenticate())
         .post((req, res) => {
-            usuariosController
+            tarefasController
                 .create(req.body)
                 .then(response => {
                     res.status(response.statusCode);
                     res.json({
-                        msg: 'Usuário cadastrado com sucesso!',
+                        msg: 'Tarefa cadastrada com sucesso!',
                         type: 'success',
                         statusCode: response.statusCode
                     });
                 })
                 .catch(response => {
                     res.json({
-                        msg: 'Erro ao cadastrar o usuário!',
+                        msg: 'Erro ao cadastrar a tarefa!',
                         type: 'error',
                         statusCode: response.statusCode
                     });
                 });
         })
-        .all(app.auth.authenticate())
         .get((req, res) => {
-            usuariosController
+            tarefasController
                 .getAll()
                 .then(response => {
                     res.status(response.statusCode);
                     res.json({
-                        usuarios: response.data,
-                        msg: 'Usuários listados com sucesso!',
+                        tarefas: response.data,
+                        msg: 'Tarefas listadas com sucesso!',
                         type: 'success',
                         statusCode: response.statusCode
                     });
                 })
                 .catch(response => {
                     res.json({
-                        msg: 'Erro ao listar usuários!',
+                        msg: 'Erro ao listar tarefas!',
                         type: 'error',
                         statusCode: response.statusCode
                     });
                 });
         });
 
-    app.route('/api/usuarios/:id')
+    app.route('/api/tarefas/:id')
         .all(app.auth.authenticate())
         .get((req, res) => {
-            usuariosController
+            tarefasController
                 .getById(req.params)
                 .then(response => {
                     res.status(response.statusCode);
                     res.json({
-                        usuario: response.data,
-                        msg: 'Cadastro de usuário encontrado!',
+                        tarefa: response.data,
+                        msg: 'Tarefa encontrada!',
                         type: 'success',
                         statusCode: response.statusCode
                     });
                 })
                 .catch(response => {
                     res.json({
-                        msg: 'Cadastro de usuário não encontrado!',
+                        msg: 'Nenhuma tarefa encontrada!',
                         type: 'error',
                         statusCode: response.statusCode
                     });
                 });
         })
         .put((req, res) => {
-            usuariosController
+            tarefasController
                 .update(req.body, req.params)
                 .then(response => {
                     res.status(response.statusCode);
                     res.json({
-                        msg: 'Usuário atualizado!',
+                        msg: 'Tarefa atualizada!',
                         type: 'success',
                         statusCode: response.statusCode
                     });
                 })
                 .catch(response => {
                     res.json({
-                        msg: 'Não foi possível atualizar o usuário!',
+                        msg: 'Não foi possível atualizar a tarefa!',
                         type: 'error',
                         statusCode: response.statusCode
                     });
                 });
         })
         .delete((req, res) => {
-            usuariosController.delete(req.params).then(response => {
+            tarefasController.delete(req.params).then(response => {
+                res.sendStatus(response.statusCode);
+            });
+        });
+
+    app.route('/api/tarefas/:id/concluida')
+        .all(app.auth.authenticate())
+        .put((req, res) => {
+            tarefasController
+                .update(req.body, req.params)
+                .then(response => {
+                    res.status(response.statusCode);
+                    res.json({
+                        msg: 'Tarefa concluída!',
+                        type: 'success',
+                        statusCode: response.statusCode
+                    });
+                })
+                .catch(response => {
+                    res.json({
+                        msg: 'Não foi possível concluír a tarefa!',
+                        type: 'error',
+                        statusCode: response.statusCode
+                    });
+                });
+        })
+        .delete((req, res) => {
+            tarefasController.delete(req.params).then(response => {
                 res.sendStatus(response.statusCode);
             });
         });
