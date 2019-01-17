@@ -1,13 +1,6 @@
 # todo-nodejs
 Trabalho de NodeJs Pós Alfa Umuarama.
 
-Usuários
-
-POST
-GET
-GET
-PUT
-
 Method      |    URL                                    |   Descrição
 ------      |   ------                                  |   ------
 POST        |   http://localhost:3001/api/usuarios      |   Cadastrar usuário
