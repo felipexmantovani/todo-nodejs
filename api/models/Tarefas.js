@@ -26,7 +26,7 @@ export default (sequelize, DataType) => {
             usuarioId: {
                 type: DataType.BIGINT,
                 references: {
-                    model: 'usuario',
+                    model: 'usuarios',
                     key: 'id'
                 }
             }
