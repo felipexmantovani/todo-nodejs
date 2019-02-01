@@ -74,7 +74,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.qhqQBTU9FiGmSZXt4L8ymoYF3vW9TeOU0ctPIS2xFaU"
 					}
 				],
 				"body": {
@@ -107,7 +107,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.qhqQBTU9FiGmSZXt4L8ymoYF3vW9TeOU0ctPIS2xFaU"
 					}
 				],
 				"body": {
@@ -141,7 +141,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
 					}
 				],
 				"body": {
@@ -175,12 +175,12 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"titulo\": \"Aprender JavaScript\",\n\t\"descricao\": \"Começar estudando NodeJS\"\n}"
+					"raw": "{\n\t\"titulo\": \"Aprender JavaScript\",\n\t\"descricao\": \"Começar estudando NodeJS\",\n\t\"usuarioId\": 1\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3001/api/tarefas",
@@ -208,7 +208,40 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tarefas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tarefas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/tarefas?titulo=aprender",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
 					}
 				],
 				"body": {
@@ -238,16 +271,21 @@
 		},
 		{
 			"name": "http://localhost:3001/api/tarefas/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json"
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
 					}
 				],
 				"body": {
@@ -281,7 +319,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
 					}
 				],
 				"body": {
@@ -315,7 +353,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
 					}
 				],
 				"body": {
@@ -349,7 +387,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
 					}
 				],
 				"body": {
