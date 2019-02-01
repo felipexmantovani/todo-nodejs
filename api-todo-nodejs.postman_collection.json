@@ -141,7 +141,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.qhqQBTU9FiGmSZXt4L8ymoYF3vW9TeOU0ctPIS2xFaU"
 					}
 				],
 				"body": {
@@ -175,7 +175,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.qhqQBTU9FiGmSZXt4L8ymoYF3vW9TeOU0ctPIS2xFaU"
 					}
 				],
 				"body": {
@@ -208,7 +208,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.qhqQBTU9FiGmSZXt4L8ymoYF3vW9TeOU0ctPIS2xFaU"
 					}
 				],
 				"body": {
@@ -241,7 +241,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.qhqQBTU9FiGmSZXt4L8ymoYF3vW9TeOU0ctPIS2xFaU"
 					}
 				],
 				"body": {
@@ -285,7 +285,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.qhqQBTU9FiGmSZXt4L8ymoYF3vW9TeOU0ctPIS2xFaU"
 					}
 				],
 				"body": {
@@ -319,12 +319,12 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Mn0.qhqQBTU9FiGmSZXt4L8ymoYF3vW9TeOU0ctPIS2xFaU"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"titulo\": \"Aprender JavaScript!!!!\",\n\t\"descricao\": \"Começar estudando NodeJS e depois avançar para ReactJS!!!!!!!\"\n}"
+					"raw": "{\n\t\"titulo\": \"Aprender Angular\",\n\t\"descricao\": \"Começar estudando NodeJS e depois avançar para Angular!\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3001/api/tarefas/1",
@@ -392,7 +392,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\n\t\"status\": 1\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3001/api/tarefas/1/concluida",
@@ -422,7 +422,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTZ9.ZHJpuweXh7M_6tsJz3iJjxWtASe9RJaY3T8UA3B8DPQ"
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.7Tl_ZnwTLJnf6GP5JD-aTJ0AhQEVM6U-_WQcnIIYhVY"
 					}
 				],
 				"body": {

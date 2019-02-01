@@ -122,7 +122,7 @@ export default app => {
         .all(app.auth.authenticate())
         .put((req, res) => {
             tarefasController
-                .update(req.body, req.params)
+                .concluida(req.body, req.params)
                 .then(response => {
                     res.status(response.statusCode);
                     res.json({
@@ -140,7 +140,7 @@ export default app => {
                 });
         })
         .delete((req, res) => {
-            tarefasController.delete(req.params).then(response => {
+            tarefasController.concluidaDelete(req.params).then(response => {
                 res.sendStatus(response.statusCode);
             });
         });

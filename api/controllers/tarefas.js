@@ -72,6 +72,26 @@ class TarefasController {
             .then(result => defaultResponse(result))
             .catch(error => errorResponse(error.message));
     }
+
+    concluida(data, params) {
+        return this.Tarefas.update(data, {
+            where: params
+        })
+            .then(result => defaultResponse(result))
+            .catch(error =>
+                errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY)
+            );
+    }
+
+    concluidaDelete(params) {
+        return this.Tarefas.destroy({
+            where: params
+        })
+            .then(result => defaultResponse(result, HttpStatus.NO_CONTENT))
+            .catch(error =>
+                errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY)
+            );
+    }
 }
 
 export default TarefasController;

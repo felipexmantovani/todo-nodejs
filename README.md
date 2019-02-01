@@ -1,4 +1,4 @@
-# todo-nodejs / Não finalizado
+# todo-nodejs
 Trabalho de NodeJs Pós Alfa Umuarama.
 
 Abrir arquivo "api-todo-nodejs.postman_collection.json" no postman.
