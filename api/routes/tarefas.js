@@ -27,24 +27,48 @@ export default app => {
                 });
         })
         .get((req, res) => {
-            tarefasController
-                .getAll()
-                .then(response => {
-                    res.status(response.statusCode);
-                    res.json({
-                        tarefas: response.data,
-                        msg: 'Tarefas listadas com sucesso!',
-                        type: 'success',
-                        statusCode: response.statusCode
+            let titulo = req.query.titulo;
+
+            if (titulo && titulo !== undefined) {
+                tarefasController
+                    .getByTitulo(titulo)
+                    .then(response => {
+                        res.status(response.statusCode);
+                        res.json({
+                            tarefas: response.data,
+                            msg: 'Tarefa listada com sucesso!',
+                            type: 'success',
+                            statusCode: response.statusCode
+                        });
+                    })
+                    .catch(response => {
+                        res.json({
+                            msg: 'Erro ao listar tarefa!',
+                            type: 'error',
+                            statusCode: response.statusCode
+                        });
                     });
-                })
-                .catch(response => {
-                    res.json({
-                        msg: 'Erro ao listar tarefas!',
-                        type: 'error',
-                        statusCode: response.statusCode
+
+            } else {
+                tarefasController
+                    .getAll()
+                    .then(response => {
+                        res.status(response.statusCode);
+                        res.json({
+                            tarefas: response.data,
+                            msg: 'Tarefas listadas com sucesso!',
+                            type: 'success',
+                            statusCode: response.statusCode
+                        });
+                    })
+                    .catch(response => {
+                        res.json({
+                            msg: 'Erro ao listar tarefas!',
+                            type: 'error',
+                            statusCode: response.statusCode
+                        });
                     });
-                });
+            }
         });
 
     app.route('/api/tarefas/:id')

@@ -1,9 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+
 import config from './config/config';
 import datasource from './config/datasource';
-import usuariosRouter from './routes/usuarios';
+
 import loginRouter from './routes/login';
+import usuariosRouter from './routes/usuarios';
+import tarefasRouter from './routes/tarefas';
+
 import authorization from './auth';
 
 const app = express();
@@ -17,7 +21,8 @@ const auth = authorization(app);
 app.use(auth.initialize());
 app.auth = auth;
 
-usuariosRouter(app);
 loginRouter(app);
+usuariosRouter(app);
+tarefasRouter(app);
 
 export default app;

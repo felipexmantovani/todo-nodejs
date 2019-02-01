@@ -1,4 +1,5 @@
 import HttpStatus from 'http-status';
+import Sequelize from 'sequelize';
 
 const defaultResponse = (data, statusCode = HttpStatus.OK) => ({
     data: data,
@@ -35,7 +36,9 @@ class TarefasController {
     create(data) {
         return this.Tarefas.create(data)
             .then(result => defaultResponse(result, HttpStatus.CREATED))
-            .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY));
+            .catch(error =>
+                errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY)
+            );
     }
 
     update(data, params) {
@@ -43,7 +46,9 @@ class TarefasController {
             where: params
         })
             .then(result => defaultResponse(result))
-            .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY));
+            .catch(error =>
+                errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY)
+            );
     }
 
     delete(params) {
@@ -51,7 +56,21 @@ class TarefasController {
             where: params
         })
             .then(result => defaultResponse(result, HttpStatus.NO_CONTENT))
-            .catch(error => errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY));
+            .catch(error =>
+                errorResponse(error.message, HttpStatus.UNPROCESSABLE_ENTITY)
+            );
+    }
+
+    getByTitulo(params) {
+        return this.Tarefas.findAll({
+            where: {
+                titulo: {
+                    [Sequelize.Op.like]: `%${params}%`
+                }
+            }
+        })
+            .then(result => defaultResponse(result))
+            .catch(error => errorResponse(error.message));
     }
 }
 
