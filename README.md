@@ -1,10 +1,10 @@
 # todo-nodejs
 Trabalho de NodeJs Pós Alfa Umuarama.
 
+Instruções:
+```
 Abrir arquivo "api-todo-nodejs.postman_collection.json" no postman.
 
-Passos:
-```
 cd node-js-todo
 npm install
 npm start
